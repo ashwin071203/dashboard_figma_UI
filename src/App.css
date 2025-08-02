@@ -1,0 +1,189 @@
+body {
+  background-color: #f8f9fa;
+}
+
+:root {
+  --primary-green: #22c55e;
+  --primary-orange: #f97316;
+  --light-gray: #f9fafb;
+  --border-gray: #e5e7eb;
+  --text-dark: #111827;
+  --text-muted: #6b7280;
+}
+
+.trending-card {
+  background: linear-gradient(135deg, var(--primary-green) 0%, #16a34a 100%);
+}
+
+.waveform-bar {
+  position: absolute;
+  bottom: 0;
+  width: 3px;
+  background: var(--primary-green);
+  border-radius: 2px;
+}
+
+.progress-circle {
+  background: conic-gradient(var(--primary-green) 0deg 216deg, #e5e7eb 216deg 360deg);
+}
+
+.main-content {
+  width: calc(90% - 400px);
+  margin: 0 auto;
+  height: fit-content;
+}
+
+aside::-webkit-scrollbar {
+  width: 6px;
+}
+
+aside::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+
+.banner {
+  background-color: #1AA928;
+  color: #f8f9fa;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+.banner1 {
+  border-radius: 10px;
+  position: absolute;
+  bottom: 280px;
+  font-size: 30px;
+
+}
+
+.banner-image {
+  height: '5px';
+}
+
+.banner-button {
+  background-color: #EB763C;
+  color: white;
+  font-size: 14px;
+}
+
+.banner2 {
+  color: #f8f9fa;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.banner-image2 {
+  position: absolute;
+  left: '800px';
+
+}
+
+.banner-text {
+  position: absolute;
+  top: 310px;
+  left: 100px;
+
+
+}
+
+
+
+.bannerol {
+  background-color: #1AA928;
+}
+
+.button {
+  background-color: #EB763C;
+}
+
+.mann {
+  position: absolute;
+  right: '400px';
+}
+
+.bannerText {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.bannerText1 {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .bannerText1 {
+    font-size: 2rem;
+  }
+}
+.sidebarr {
+  width: 250px;
+  height: 100vh;
+  transition: transform 0.3s ease;
+  z-index: 1050;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
+}
+.bannerTest1{
+  font-family: 'Times New Roman', Times, serif;
+}
+/* Sidebar nav-link hover */
+.sidebar .nav-link:not(.text-white):hover {
+  background-color: #EB763C !important;
+  color: white !important;
+}
+
+.sidebar .nav-link:not(.text-white):hover span {
+  color: white !important;
+}
+
+.sidebar .nav-link:not(.text-white):hover .nav-icon-container {
+  background-color: white !important;
+}
+
+.sidebar .nav-link {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar .nav-icon-container {
+  transition: background-color 0.2s ease;
+}
+.text1{
+color: #6b7280;
+}
+.books1{
+}
+.flag{
+position: absolute;
+  right: 2px;
+  top: 40px;
+}
+.search-bar-wrapper {
+  max-width: 450px;
+
+  height: 50px;
+}
+
+.search-input {
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  background-color: #f3f6f9;
+  padding-left: 20px;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.search-button {
+  background-color: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+}
+.pause{
+  position: absolute;
+  top: 400px;
+  right: 105px;
+}
