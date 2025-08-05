@@ -1,12 +1,12 @@
-import React from 'react'
-import RightSidebar from './RightSidebar'
+// import React from 'react'
+// import RightSidebar from './RightSidebar'
 
-const HomeContent = () => {
-  return (
-    <div>
-        <RightSidebar/>
-    </div>
-  )
-}
+// const HomeContent = () => {
+//   return (
+//     <div>
+//         <RightSidebar/>
+//     </div>
+//   )
+// }
 
-export default HomeContent
+// export default HomeContent

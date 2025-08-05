@@ -1,0 +1,47 @@
+/* Background gradient like image */
+.bg-trending-green {
+  background: linear-gradient(to right, #1AA928,#1AA928);
+}
+
+/* Top right floating books image */
+.hero-image-top-right {
+  position: absolute;
+  top: 0;
+  right: '50px';
+  max-height: 100px;
+  z-index: 0;
+}
+
+/* Center floating petal */
+.hero-image-petal {
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  max-height: 80px;
+  z-index: 0;
+}
+
+
+.button{
+    background-color: #EB763C;
+}
+.bannertext{
+    font-family: 'Times New Roman', Times, serif;
+}
+.characterImage{
+    min-height: 40px;
+}
+
+/* Hide on mobile */
+@media (max-width: 767.98px) {
+  .trending-banner {
+    display: none !important;
+  }
+}
+.man-ban{
+    position: absolute;
+    top:10px ;
+    left: 450px;
+    height: 20px;
+}

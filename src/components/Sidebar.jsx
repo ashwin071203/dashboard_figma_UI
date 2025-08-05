@@ -1,4 +1,4 @@
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import './components.css';
@@ -13,8 +13,7 @@ import a5 from '../assets/Setting.png';
 import a6 from '../assets/Logout.png';
 
 const Sidebar = () => {
-  const location = useLocation();
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1240);
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
@@ -27,9 +26,9 @@ const Sidebar = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      const mobile = window.innerWidth < 768;
+      const mobile = window.innerWidth < 1240;
       setIsMobile(mobile);
-      setIsOpen(!mobile); 
+      setIsOpen(!mobile);
     };
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -40,7 +39,6 @@ const Sidebar = () => {
 
   return (
     <>
-     
       {isMobile && !isOpen && (
         <button
           className="btn position-fixed top-3 start-3 m-3 z-3"
@@ -54,7 +52,6 @@ const Sidebar = () => {
         <aside className="sidebar sidebarrr position-fixed top-0 start-0 bg-white d-flex flex-column">
           <br />
 
-         
           <div className="d-flex align-items-center justify-content-between px-5">
             {!isMobile && (
               <div className="d-flex align-items-center gap-3">
@@ -72,40 +69,38 @@ const Sidebar = () => {
           <br />
           <br />
 
-          
           <nav className="nav flex-column px-3">
-            {navItems.map((item) => {
-              const isActive = location.pathname === item.path;
+            {navItems.map((item) => (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                className={({ isActive }) =>
+                  `nav-link d-flex align-items-center gap-3 px-3 py-2 rounded-pill mb-2 text-decoration-none ${
+                    isActive ? 'active-link text-white' : 'text-secondary'
+                  }`
+                }
+                onClick={() => isMobile && setIsOpen(false)}
+              >
+                {({ isActive }) => (
+                  <>
+                    <div
+                      className={`nav-icon-container d-flex align-items-center justify-content-center rounded-circle ${
+                        isActive ? 'bg-white' : 'bg-light'
+                      }`}
+                    >
+                      <img
+                        src={item.icon}
+                        alt={`${item.label} Icon`}
+                        className="nav-icon"
+                      />
+                    </div>
+                    <span className="text1 fw-medium">{item.label}</span>
+                  </>
+                )}
+              </NavLink>
+            ))}
 
-              return (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`nav-link d-flex align-items-center gap-3 px-3 py-2 rounded-pill mb-2 text-decoration-none ${
-                    isActive ? 'text-white bg-hover-orange' : 'text-secondary'
-                  }`}
-                  onClick={() => isMobile && setIsOpen(false)}
-                >
-                  <div
-                    className={`nav-icon-container d-flex align-items-center justify-content-center rounded-circle ${
-                      isActive ? 'bg-white' : 'bg-light'
-                    }`}
-                  >
-                    <img
-                      src={item.icon}
-                      alt={`${item.label} Icon`}
-                      className="nav-icon"
-                    />
-                  </div>
-                  <span className="text1 fw-medium ">{item.label}</span>
-                </Link>
-              );
-            })}
-
-            
-            <div
-              className="nav-link d-flex align-items-center gap-3 px-3 py-2 rounded-pill mb-2 text-decoration-none text-secondary logout-hover"
-            >
+            <div className="nav-link d-flex align-items-center gap-3 px-3 py-2 rounded-pill mb-2 text-decoration-none text-secondary logout-hover">
               <div className="nav-icon-container d-flex align-items-center justify-content-center rounded-circle bg-light">
                 <img src={a6} alt="Logout Icon" className="nav-icon" />
               </div>
@@ -113,14 +108,6 @@ const Sidebar = () => {
             </div>
           </nav>
 
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-
-         
           <div className="p-4 text-center mt-auto">
             <img src={footer} alt="Footer" className="sidebar-footer-img" />
           </div>
